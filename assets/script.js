@@ -14,7 +14,19 @@
 // Step 8 - Once all prompts have been answered a password should be generated based upon their answers.  This can be either displayed in the box on the page, or given in a prompt.  On the box probably better, so they can copy it.
 
 //Start of our coding.
+//We can see that in the code provided, we need to establish a generatePassword function to run in the function of writePassword which will will trigger when they push the button.
+// This is our function for generating the password. We will fill this function with options as we move forwards.
 
+// Lets test some variables.
+var upperCase = ['A', 'B', 'C',];
+console.log(upperCase);
+console.log(upperCase.length);
+/*
+function generatePassword(){
+var possibleCharacters = [];
+
+
+/*
 //This is our first prompt to the user.  We want them to establish the length of the password.
 numberOfCharacters = prompt("How many characters would you like in your password? Choose between 8-128 characters.");
 //We need options for their choices to the above. We need to first make sure that the way they chose is validated by us.  And we can select what we want to be valid.
@@ -23,17 +35,25 @@ if(numberOfCharacters < 8 || numberOfCharacters > 128){
   return "Please enter a valid number of characters.";
 } 
 //What if they decide to try and use words instead of numerical keys.  It'll be easier for us if they just give us a number, vs trying to decipher a string.
-else if (isNaN(numberOfCharacters)){
-  numberOfCharacters = prompt("Olkease enter in numerical value ex. 123.");
+else if (isNaN(numberOfCharacters)){ //isNaN lets us check to see if what they input was in number form.  I found on https://www.w3schools.com/jsref/jsref_isnan_number.asp .
+  numberOfCharacters = prompt("Please enter in numerical value ex. 123.");
 }
 //Now if they have entered a valid number in numerical form, we want to return something to them so they know they did it correctly.
 else {
   alert("Your password will be " + numberOfCharacters + " characters long.");
 }
- 
+// Skipping ahead at first as we need to be able to finish the function, before providing more options.   
+let password = ""
+for (let i = 0; i < numberOfCharacters; i++) {
+  let rng =[Math.floor(Math.random() * possibleCharacters.length)];
+  // or finalPassword += possibleCharacters[rng];
+  password = password + possibleCharacters[rng];
+}
+return password;
+*/
+/*};
 
-
-
+/*
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
@@ -48,3 +68,4 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+*/
