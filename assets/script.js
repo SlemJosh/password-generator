@@ -14,13 +14,21 @@
 // Step 8 - Once all prompts have been answered a password should be generated based upon their answers.  This can be either displayed in the box on the page, or given in a prompt.  On the box probably better, so they can copy it.
 
 //Start of our coding.
-//We can see that in the code provided, we need to establish a generatePassword function to run in the function of writePassword which will will trigger when they push the button.
-// This is our function for generating the password. We will fill this function with options as we move forwards.
+//I decided to start with declaring variables.  I'm going to ask the user to use them, figured I might as well declare them first and foremost.
 
 // Lets test some variables.
-var upperCase = ['A', 'B', 'C',];
-console.log(upperCase);
+var lowerCase = ['a', 'b','c','d', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+var upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+var numeric = ['0','1','2','3','4','5','6','7','8','9'];
+var specialChar =['`','~','!','@','#','$','%','^','&','*'];  //Finish these
 console.log(upperCase.length);
+
+console.log(lowerCase);
+console.log(lowerCase.length);
+
+console.log(numeric);
+console.log(numeric.length);
+
 /*
 function generatePassword(){
 var possibleCharacters = [];
