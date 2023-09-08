@@ -18,9 +18,9 @@
 
 // Lets test some variables.
 var lowerCase = ['abcdefghijklmnopqrstuvwxyz'.split('')]; //picked this up in Thursdays class.  
-var upperCase = ['ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')];
+var upperCase = ['ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')]; //An interesting note, while this will allow us to more easily type out the array, when I did a console log of length, it still only showed it as one. So split might not work all the time.
 var numeric = ['0123456789'.split('')];
-var specialChar =['`','~','!','@','#','$','%','^','&','*','_','-','/','?',','];  
+var specialChar =['`','~','!','@','#','$','%','^','&','*','_','-','/','?',','];  //wanted to try a split, but because of special characters it seemed more complicated.
 var possibleCharacters = [];
 
 function generatePassword(){
@@ -44,6 +44,21 @@ else if (isNaN(numberOfCharacters)){ //isNaN lets us check to see if what they i
 else {
   alert("Your password will be " + numberOfCharacters + " characters long.");
 }
+
+//Starting our 2nd prompt.  This will be the lowercase prompt.  Unlike the first, we just need a yes/no answer.
+hasLowercase = confirm("Do you want lowercase characters?");
+if (haslowercase) {
+  var turnToLowercase = alert("Your password will contain lowercase characters.");
+}
+else {
+  alert("Your passworld will NOT include lower case characters.")
+}
+
+//Seems to break at this point.  Will have to look into further.
+
+
+
+
 // Skipping ahead at first as we need to be able to finish the function, before providing more options.   
 let password = ""
 for (let i = 0; i < numberOfCharacters; i++) {
