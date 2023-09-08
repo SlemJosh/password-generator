@@ -17,38 +17,28 @@
 //I decided to start with declaring variables.  I'm going to ask the user to use them, figured I might as well declare them first and foremost.
 
 // Lets test some variables.
-var lowerCase = ['a', 'b','c','d', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-var lowerCase2 = ['abcdefghijklmnopqrstuvwxyz'.split('')]; //picked this up in Thursdays class.  
-var upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-var numeric = ['0','1','2','3','4','5','6','7','8','9'];
-var specialChar =['`','~','!','@','#','$','%','^','&','*'];  //Finish these
-console.log(upperCase.length);
-
-console.log(lowerCase2);
-console.log(lowerCase2.length);
-
-console.log(lowerCase);
-console.log(lowerCase.length);
-
-console.log(numeric);
-console.log(numeric.length);
-
-/*
-function generatePassword(){
+var lowerCase = ['abcdefghijklmnopqrstuvwxyz'.split('')]; //picked this up in Thursdays class.  
+var upperCase = ['ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')];
+var numeric = ['0123456789'.split('')];
+var specialChar =['`','~','!','@','#','$','%','^','&','*','_','-','/','?',','];  
 var possibleCharacters = [];
 
+function generatePassword(){
 
-/*
 //This is our first prompt to the user.  We want them to establish the length of the password.
-numberOfCharacters = prompt("How many characters would you like in your password? Choose between 8-128 characters.");
-//We need options for their choices to the above. We need to first make sure that the way they chose is validated by us.  And we can select what we want to be valid.
-//Lets start with make sure they select a range between what we gave them.
+numberOfCharacters = prompt("How many characters would you like in your password? Choose between 8-128 characters and type it as a number. ex. 123");
+
+//If there choice does not fall into the number paramater we outlined, we want to first give them a prompt to try again. If they fail the prompt, then we will display a message, and have them start the process over.
 if(numberOfCharacters < 8 || numberOfCharacters > 128){
-  return "Please enter a valid number of characters.";
+  numberOfCharacters = prompt("Please enter a number between 8 and 128.");
+  generatePassword();
+  //return "You must select the appropriate number of characters. Please start over.";
 } 
-//What if they decide to try and use words instead of numerical keys.  It'll be easier for us if they just give us a number, vs trying to decipher a string.
+//If there choice is not typed out the way we need it, we will give them a prompt asking one more time.  If they fail that prompt it will then display the error message, and ask them to start over.
 else if (isNaN(numberOfCharacters)){ //isNaN lets us check to see if what they input was in number form.  I found on https://www.w3schools.com/jsref/jsref_isnan_number.asp .
   numberOfCharacters = prompt("Please enter in numerical value ex. 123.");
+  generatePassword();
+  //return "You must type the number out in numerical form. Please Start Over";
 }
 //Now if they have entered a valid number in numerical form, we want to return something to them so they know they did it correctly.
 else {
@@ -62,10 +52,10 @@ for (let i = 0; i < numberOfCharacters; i++) {
   password = password + possibleCharacters[rng];
 }
 return password;
-*/
-/*};
 
-/*
+};
+
+
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
@@ -80,4 +70,4 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-*/
+
