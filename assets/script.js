@@ -43,15 +43,14 @@ generateBtn.addEventListener("click", writePassword);
 // For some reason, when I tried to use my variables above. The password at the end was not random, it was more or less unshuffled. So whenever it went to display 1 numeric value, it would instead show the entire array for that one value, and then 
 // proceed to do the same for the rest. So a 12 letter password would all of a sudden take up like 40 characters.
 
-console.log(lowerCase)
 var lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 var upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 var numeric = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-var specialChar = ['`','~','!','@','#','$','%','^','&','*','_','-','/','?',','];
+var specialChar = ['`', '~', '!', '@', '#', '$', '%', '^', '&', '*', '_', '-', '/', '?', ','];
 
 // Once we got done with the prompts, we needed a variable to store all the above variables into one long string, so that at the end we can just get a random sampling from it.
 
-var possibleCharacters = [];  
+var possibleCharacters = [];
 
 function generatePassword() {
 
@@ -63,7 +62,6 @@ function generatePassword() {
   if (numberOfCharacters < 8 || numberOfCharacters > 128) {
     numberOfCharacters = prompt("Please enter a number between 8 and 128.");
     generatePassword();  // This essentially starts the program over, without them needing to click the button again.
-    
   }
   // If there choice is not typed out the way we need it, we will give them a prompt asking one more time.  If they fail that prompt it will then display the error message, and ask them to start over.
   else if (isNaN(numberOfCharacters)) { //isNaN lets us check to see if what they input was in number form.  I found on https://www.w3schools.com/jsref/jsref_isnan_number.asp .
@@ -155,6 +153,5 @@ function generatePassword() {
     let result = [Math.floor(Math.random() * possibleCharacters.length)];  // Our result variable, which is a number of characters, we set it = to a random math operation of taking all our possible characters, and shuffling them.
     newPassword += possibleCharacters[result];  // Found the += https://www.w3schools.com/js/js_operators.asp.  Essentially making it so I didn't have to write password = password + possibleCharacters[rng].  
   }
-  return newPassword;
+  return newPassword;    //Return sends a message to the box.  We could also send the user a prompt, but if it's in the box, they can copy and paste it.
 };
-
