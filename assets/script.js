@@ -21,11 +21,12 @@ var lowerCase = ['abcdefghijklmnopqrstuvwxyz'.split('')]; //picked this up in Th
 var upperCase = ['ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')]; //An interesting note, while this will allow us to more easily type out the array, when I did a console log of length, it still only showed it as one. So split might not work all the time.
 var numeric = ['0123456789'.split('')];
 var specialChar =['`','~','!','@','#','$','%','^','&','*','_','-','/','?',','];  //wanted to try a split, but because of special characters it seemed more complicated.
-var possibleCharacters = [];
+var possibleCharacters = [];  //This will be established based on our first prompt, and then made up based on the choices that the user inputs from the remaining prompts.
 
 function generatePassword(){
 
 //This is our first prompt to the user.  We want them to establish the length of the password.
+//We create a new variable here, that didn't need to be defined, as it will instead just have parameters for which the user will chose.  We establish those paramets with our first if and else statements.
 numberOfCharacters = prompt("How many characters would you like in your password? Choose between 8-128 characters and type it as a number. ex. 123");
 
 //If there choice does not fall into the number paramater we outlined, we want to first give them a prompt to try again. If they fail the prompt, then we will display a message, and have them start the process over.
@@ -81,6 +82,21 @@ if (hasSpecial){
 else {
   alert("Your password will NOT contain special characters.")
 }
+
+//Now we need to do some behind the scenes work.  We need to take all the answers to the previous prompt questions, and have them either added or left out of our final password.
+
+// If they said they want lower case, we will then use the method of concat, which will join the strings without changing them.  So it's joining our strings possibleCharacters and the lowerCase.  Essentialy telling us that of the value
+// that was given to us from the first prompt, we want it to include values from the lowercase variable options.  
+if (hasLowercase){
+  possibleCharacters = possibleCharacters.concat(lowerCase);
+}
+console.log(possibleCharacters) // A test to make sure that our variable contains the included array.
+
+if (hasUppercase){
+  possibleCharacters = possibleCharacters.concat(upperCase);
+}
+console.log(possibleCharacters) // A test to make sure that our variable contains the included array.
+
 
 /*
 // Skipping ahead at first as we need to be able to finish the function, before providing more options.   
