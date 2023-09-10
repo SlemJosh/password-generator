@@ -51,10 +51,9 @@ if (hasLowercase) {
   alert("Your password WILL contain lowercase characters.");
 }
 else {
-  alert("Your passworld will NOT include lower case characters.")
+  alert("Your passworld will NOT contain lower case characters.")
 }
 
-//Seems to break at this point.  Will
 
 //Starting our 3rd prompt.  This will be the uppercase prompt.  Just need a yes/no answer.
 hasUppercase = confirm("Do you want your password to have uppercase characters? ex. ABC");
@@ -62,10 +61,20 @@ if (hasUppercase){
   alert("Your password WILL contain uppercase characters.");
 }
 else {
-  alert("Your password will NOT have uppercase characters.");
+  alert("Your password will NOT contain uppercase characters.");
+}
+
+//Start of 4th prompt. Has numbers.  Just need a yes/no answer.
+hasNumbers = confirm("Do you want your password to have numbers? ex.123")
+if (hasNumbers){
+  alert("Your password WILL contain numbers.");
+}
+else {
+  alert("Your password will NOT contain numbers.");
 }
 
 
+/*
 // Skipping ahead at first as we need to be able to finish the function, before providing more options.   
 let password = ""
 for (let i = 0; i < numberOfCharacters; i++) {
@@ -76,6 +85,7 @@ for (let i = 0; i < numberOfCharacters; i++) {
 return password;
 
 };
+*/
 
 
 // Assignment Code
