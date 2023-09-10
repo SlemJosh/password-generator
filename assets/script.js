@@ -46,17 +46,24 @@ else {
 }
 
 //Starting our 2nd prompt.  This will be the lowercase prompt.  Unlike the first, we just need a yes/no answer.
-hasLowercase = confirm("Do you want lowercase characters?");
-if (haslowercase) {
-  var turnToLowercase = alert("Your password will contain lowercase characters.");
+hasLowercase = confirm("Do you want your password to have lowercase characters? ex. abc");
+if (hasLowercase) {
+  alert("Your password WILL contain lowercase characters.");
 }
 else {
   alert("Your passworld will NOT include lower case characters.")
 }
 
-//Seems to break at this point.  Will have to look into further.
+//Seems to break at this point.  Will
 
-
+//Starting our 3rd prompt.  This will be the uppercase prompt.  Just need a yes/no answer.
+hasUppercase = confirm("Do you want your password to have uppercase characters? ex. ABC");
+if (hasUppercase){
+  alert("Your password WILL contain uppercase characters.");
+}
+else {
+  alert("Your password will NOT have uppercase characters.");
+}
 
 
 // Skipping ahead at first as we need to be able to finish the function, before providing more options.   
