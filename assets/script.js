@@ -73,6 +73,14 @@ else {
   alert("Your password will NOT contain numbers.");
 }
 
+//Start of 5th prompt. Has special characters.  Also just another Yes/No. 
+hasSpecial = confirm("Do you want your password to have special characters? ex. %*!")
+if (hasSpecial){
+  alert("Your password WILL contain special characters.");
+}
+else {
+  alert("Your password will NOT contain special characters.")
+}
 
 /*
 // Skipping ahead at first as we need to be able to finish the function, before providing more options.   
@@ -83,9 +91,9 @@ for (let i = 0; i < numberOfCharacters; i++) {
   password = password + possibleCharacters[rng];
 }
 return password;
-
-};
 */
+};
+
 
 
 // Assignment Code
