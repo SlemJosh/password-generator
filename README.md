@@ -14,7 +14,7 @@ There are some places where I can see that I will likely want to come back to th
 Deployed at https://slemjosh.github.io/password-generator/
 
 ## Usage
-(./assets/images/passwordgenerator1.png)(./assets/images/passwordgenerator2.png)
+![portfolio webpage.](./assets/images/passwordgenerator1.png)(./assets/images/passwordgenerator2.png)
 
 ## Credits
 
@@ -23,7 +23,6 @@ https://www.slingacademy.com/article/ways-to-generate-random-strings-in-javascri
 
 https://www.w3schools.com/js/js_operators.asp
 -When it came to some of the math, I used this to simply, as I didn't like having code repeating itself.
-
 
 
 ## License
