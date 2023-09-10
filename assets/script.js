@@ -119,7 +119,7 @@ function generatePassword() {
   if (hasLowercase === false && hasUppercase === false && hasNumbers === false && hasSpecial === false) {
     alert("You must select at least one character type for your password.");
     // Rather than just loop this back to the beginning. I thought it would be better to just populate the box, and they can start the process over with a new click. 
-    return ("Your password must select confirm on at least one of the character options.\n Please Try Again");  //Added a linebreak using  \n 
+    return ("Your password must contain at least one of the character options.\n Please Try Again");  //Added a linebreak using  \n 
   }
 
   // At this point if they made it past all the previous checks, we  need to start making that password.
