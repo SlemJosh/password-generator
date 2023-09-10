@@ -62,12 +62,12 @@ function generatePassword() {
     alert("Your password WILL contain lowercase characters.");
   }
   else {
-    alert("Your passworld will NOT contain lower case characters.")
+    alert("Your passworld will NOT contain lower case characters.");
   }
 
 
   // Starting our 3rd prompt.  This will be the uppercase prompt.  Just need a yes/no answer.
-  hasUppercase = confirm("Do you want your password to have uppercase characters? ex. ABC \n OK for Yes. Cancel for No.");
+  hasUppercase = confirm("Do you want your password to have uppercase characters? ex. ABC \n OK for Yes. Cancel for No.");//Added line break in prompt
   if (hasUppercase) {
     alert("Your password WILL contain uppercase characters.");
   }
@@ -76,7 +76,7 @@ function generatePassword() {
   }
 
   // Start of 4th prompt. Has numbers.  Just need a yes/no answer.
-  hasNumbers = confirm("Do you want your password to have numbers? ex.123 \n OK for Yes. Cancel for No")
+  hasNumbers = confirm("Do you want your password to have numbers? ex.123 \n OK for Yes. Cancel for No");//Added line break in prompt
   if (hasNumbers) {
     alert("Your password WILL contain numbers.");
   }
@@ -85,12 +85,12 @@ function generatePassword() {
   }
 
   // Start of 5th prompt. Has special characters.  Also just another Yes/No. 
-  hasSpecial = confirm("Do you want your password to have special characters? ex. %*! \n OK for Yes. Cancel for No")
+  hasSpecial = confirm("Do you want your password to have special characters? ex. %*! \n OK for Yes. Cancel for No"); //Added line break in prompt
   if (hasSpecial) {
     alert("Your password WILL contain special characters.");
   }
   else {
-    alert("Your password will NOT contain special characters.")
+    alert("Your password will NOT contain special characters.");
   }
 
   // Now we need to do some behind the scenes work.  We need to take all the answers to the previous prompt questions, and have them either added or left out of our final password.
@@ -132,7 +132,7 @@ function generatePassword() {
 
   let newPassword = ""
   for (let i = 0; i < numberOfCharacters; i++) {
-    let rng = [Math.floor(Math.random() * possibleCharacters.length)];  //We have a math function of taking a variable and multiplying by the answer they gave us 
+    let rng = [Math.floor(Math.random() * possibleCharacters.length)];  //We have a math function of taking a vari
     newPassword += possibleCharacters[rng];  // Found the += https://www.w3schools.com/js/js_operators.asp.  Essentially making it so I didn't have to write password = password + possibleCharacters[rng].  
   }
   return newPassword;
