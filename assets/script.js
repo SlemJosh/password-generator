@@ -97,6 +97,16 @@ if (hasUppercase){
 }
 console.log(possibleCharacters) // A test to make sure that our variable contains the included array.
 
+if (hasNumbers){
+  possibleCharacters = possibleCharacters.concat(numeric);
+}
+console.log(possibleCharacters) // A test to make sure that our variable contains the included array.
+
+if (hasSpecial){
+  possibleCharacters = possibleCharacters.concat(specialChar);
+}
+console.log(possibleCharacters) // A test to make sure that our variable contains the included array.
+
 
 /*
 // Skipping ahead at first as we need to be able to finish the function, before providing more options.   
