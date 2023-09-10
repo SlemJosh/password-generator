@@ -130,12 +130,12 @@ function generatePassword() {
 
   // Now we take all the above information and plug it into one last equation 
 
-  let password = ""
+  let newPassword = ""
   for (let i = 0; i < numberOfCharacters; i++) {
     let rng = [Math.floor(Math.random() * possibleCharacters.length)];  //We have a math function of taking a variable and multiplying by the answer they gave us 
-    password += possibleCharacters[rng];
+    newPassword += possibleCharacters[rng];  // Found the += https://www.w3schools.com/js/js_operators.asp.  Essentially making it so I didn't have to write password = password + possibleCharacters[rng].  
   }
-  return password;
+  return newPassword;
 };
 
 
