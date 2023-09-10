@@ -57,7 +57,7 @@ function generatePassword() {
   }
 
   // Starting our 2nd prompt.  This will be the lowercase prompt.  Unlike the first, we just need a yes/no answer.
-  hasLowercase = confirm("Do you want your password to have lowercase characters? ex. abc \n OK for Yes. Cancel for No");
+  hasLowercase = confirm("Do you want your password to have lowercase characters? ex. abc \n OK for Yes. Cancel for No"); //So, I did some research on making custom prompt boxes. Feels like something we will cover later on in this class
   if (hasLowercase) {
     alert("Your password WILL contain lowercase characters.");
   }
@@ -131,9 +131,9 @@ function generatePassword() {
   // Now we take all the above information and plug it into one last equation 
 
   let newPassword = ""
-  for (let i = 0; i < numberOfCharacters; i++) {
-    let rng = [Math.floor(Math.random() * possibleCharacters.length)];  //We have a math function of taking a vari
-    newPassword += possibleCharacters[rng];  // Found the += https://www.w3schools.com/js/js_operators.asp.  Essentially making it so I didn't have to write password = password + possibleCharacters[rng].  
+  for (let i = 0; i < numberOfCharacters; i++) {    // How many characters did the user want.  We get that amount and set it = to the new variable result.   
+    let result = [Math.floor(Math.random() * possibleCharacters.length)];  // Our result variable, which is a number of characters, we set it = to a random math operation of taking all our possible characters, and shuffling them.
+    newPassword += possibleCharacters[result];  // Found the += https://www.w3schools.com/js/js_operators.asp.  Essentially making it so I didn't have to write password = password + possibleCharacters[rng].  
   }
   return newPassword;
 };
