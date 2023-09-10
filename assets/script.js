@@ -1,5 +1,21 @@
-//First Step for this refactor is to write out some pseudocode so I can have steps to follow in order to complete the page.
-//These are mostly taken directly from the Challenge page
+// Assignment Code
+var generateBtn = document.querySelector("#generate");
+
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+
+}
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+
+
+// First Step for this refactor is to write out some pseudocode so I can have steps to follow in order to complete the page.
+// These are mostly taken directly from the Challenge page
 // Basic Outline.  Each step will actually have varying steps underneath them.  As we provide options, we need to build our app to know what those choices are, and also have a way of using them.  
 // Step 1 - User will click the button
 // So as we start, and click the button, nothing happens.  The code that was given to us is for the button to start the prompts, but we have no prompts.
@@ -16,11 +32,12 @@
 // Start of our coding.
 // I decided to start with declaring variables.  I'm going to ask the user to use them, figured I might as well declare them first and foremost.
 
-// Lets test some variables.
-/*var lowerCase = ['abcdefghijklmnopqrstuvwxyz'.split('')]; //picked this up in Thursdays class.  
-var upperCase = ['ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')]; //An interesting note, while this will allow us to more easily type out the array, when I did a console log of length, it still only showed it as one. So split might not work all the time.
-var numeric = ['0123456789'.split('')];
-var specialChar =['`','~','!','@','#','$','%','^','&','*','_','-','/','?',','];  //wanted to try a split, but because of special characters it seemed more complicated.
+// Lets test some variables.  These were the original values I put for my variables, but for some reason couldn't get them to load right in the final stage.  Wanted to keep them here, so at a later date I can figure out how to improve it.  Commenting
+// out for now.
+/* var lowerCase = ['abcdefghijklmnopqrstuvwxyz'.split('')]; //picked this up in Thursdays class.  
+   var upperCase = ['ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')]; //An interesting note, while this will allow us to more easily type out the array, when I did a console log of length, it still only showed it as one. So split might not work all the time.
+   var numeric = ['0123456789'.split('')];
+   var specialChar =['`','~','!','@','#','$','%','^','&','*','_','-','/','?',','];  //wanted to try a split, but because of special characters it seemed more complicated.
 */
 
 // For some reason, when I tried to use my variables above. The password at the end was not random, it was more or less unshuffled. So whenever it went to display 1 numeric value, it would instead show the entire array for that one value, and then 
@@ -30,9 +47,11 @@ console.log(lowerCase)
 var lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 var upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 var numeric = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-var specialChar = ['@', '%', '+', '\\', '/', "'", '!', '#', '$', '^', '?', ':', ',', ')', '(', '}', '{', ']', '[', '~', '-', '_', '.'];
+var specialChar = ['`','~','!','@','#','$','%','^','&','*','_','-','/','?',','];
 
-var possibleCharacters = [];
+// Once we got done with the prompts, we needed a variable to store all the above variables into one long string, so that at the end we can just get a random sampling from it.
+
+var possibleCharacters = [];  
 
 function generatePassword() {
 
@@ -43,13 +62,13 @@ function generatePassword() {
   // If there choice does not fall into the number paramater we outlined, we want to first give them a prompt to try again. If they fail the prompt, then we will display a message, and have them start the process over.
   if (numberOfCharacters < 8 || numberOfCharacters > 128) {
     numberOfCharacters = prompt("Please enter a number between 8 and 128.");
-    generatePassword();
-    //return "You must select the appropriate number of characters. Please start over.";
+    generatePassword();  // This essentially starts the program over, without them needing to click the button again.
+    
   }
   // If there choice is not typed out the way we need it, we will give them a prompt asking one more time.  If they fail that prompt it will then display the error message, and ask them to start over.
   else if (isNaN(numberOfCharacters)) { //isNaN lets us check to see if what they input was in number form.  I found on https://www.w3schools.com/jsref/jsref_isnan_number.asp .
     numberOfCharacters = prompt("Please enter in numerical value ex. 123.");
-    generatePassword();
+    generatePassword();  // This essentially starts the program over, without them needing to click the button again.
   }
   // Now if they have entered a valid number in numerical form, we want to return something to them so they know they did it correctly.
   else {
@@ -58,10 +77,10 @@ function generatePassword() {
 
   // Starting our 2nd prompt.  This will be the lowercase prompt.  Unlike the first, we just need a yes/no answer.
   hasLowercase = confirm("Do you want your password to have lowercase characters? ex. abc \n OK for Yes. Cancel for No"); //So, I did some research on making custom prompt boxes. Feels like something we will cover later on in this class
-  if (hasLowercase) {
+  if (hasLowercase) {   // Basically we are saying if the value is True, aka the user selected Yes/OK, then we want to proceed this way.
     alert("Your password WILL contain lowercase characters.");
   }
-  else {
+  else {  // If the user was to click on Cancel/No, we want the value to be false, and render us a different output.
     alert("Your passworld will NOT contain lower case characters.");
   }
 
@@ -108,49 +127,34 @@ function generatePassword() {
   // At this point if they made it past all the previous checks, we  need to start making that password.
   // If they said they want lower case, we will then use the method of concat, which will join the strings without changing them.  So it's joining our strings possibleCharacters and the lowerCase.  Essentialy telling us that of the value
   // that was given to us from the first prompt, we want it to include values from the lowercase variable options.  
+
   if (hasLowercase) {
     possibleCharacters = possibleCharacters.concat(lowerCase);
   }
-  console.log(possibleCharacters) // A test to make sure that our variable contains the included array.
+  // console.log(possibleCharacters) // A test to make sure that our variable contains the included array.
   // Checking for Upper Case
   if (hasUppercase) {
     possibleCharacters = possibleCharacters.concat(upperCase);
   }
-  console.log(possibleCharacters) // A test to make sure that our variable contains the included array.
+  // console.log(possibleCharacters) // A test to make sure that our variable contains the included array.
   // Checking for Numeric
   if (hasNumbers) {
     possibleCharacters = possibleCharacters.concat(numeric);
   }
-  console.log(possibleCharacters) // A test to make sure that our variable contains the included array.
+  // console.log(possibleCharacters) // A test to make sure that our variable contains the included array.
   // Checking for special characters.
   if (hasSpecial) {
     possibleCharacters = possibleCharacters.concat(specialChar);
   }
-  console.log(possibleCharacters) // A test to make sure that our variable contains the included array.
+  // console.log(possibleCharacters) // A test to make sure that our variable contains the included array.
 
   // Now we take all the above information and plug it into one last equation 
 
-  let newPassword = ""
+  let newPassword = ""                // Because we don't know if it will be just numbers or letters, we equate the password to a string.
   for (let i = 0; i < numberOfCharacters; i++) {    // How many characters did the user want.  We get that amount and set it = to the new variable result.   
     let result = [Math.floor(Math.random() * possibleCharacters.length)];  // Our result variable, which is a number of characters, we set it = to a random math operation of taking all our possible characters, and shuffling them.
     newPassword += possibleCharacters[result];  // Found the += https://www.w3schools.com/js/js_operators.asp.  Essentially making it so I didn't have to write password = password + possibleCharacters[rng].  
   }
   return newPassword;
 };
-
-
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-}
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
 
