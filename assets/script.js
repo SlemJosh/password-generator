@@ -74,7 +74,7 @@ function generatePassword() {
   }
 
   // Starting our 2nd prompt.  This will be the lowercase prompt.  Unlike the first, we just need a yes/no answer.
-  hasLowercase = confirm("Do you want your password to have lowercase characters? ex. abc \n OK for Yes. Cancel for No"); //So, I did some research on making custom prompt boxes. Feels like something we will cover later on in this class
+  var hasLowercase = confirm("Do you want your password to have lowercase characters? ex. abc \n OK for Yes. Cancel for No"); //So, I did some research on making custom prompt boxes. Feels like something we will cover later on in this class
   if (hasLowercase) {   // Basically we are saying if the value is True, aka the user selected Yes/OK, then we want to proceed this way.
     alert("Your password WILL contain lowercase characters.");
   }
@@ -84,7 +84,7 @@ function generatePassword() {
 
 
   // Starting our 3rd prompt.  This will be the uppercase prompt.  Just need a yes/no answer.
-  hasUppercase = confirm("Do you want your password to have uppercase characters? ex. ABC \n OK for Yes. Cancel for No.");//Added line break in prompt
+  var hasUppercase = confirm("Do you want your password to have uppercase characters? ex. ABC \n OK for Yes. Cancel for No.");//Added line break in prompt
   if (hasUppercase) {
     alert("Your password WILL contain uppercase characters.");
   }
@@ -93,7 +93,7 @@ function generatePassword() {
   }
 
   // Start of 4th prompt. Has numbers.  Just need a yes/no answer.
-  hasNumbers = confirm("Do you want your password to have numbers? ex.123 \n OK for Yes. Cancel for No");//Added line break in prompt
+  var hasNumbers = confirm("Do you want your password to have numbers? ex.123 \n OK for Yes. Cancel for No");//Added line break in prompt
   if (hasNumbers) {
     alert("Your password WILL contain numbers.");
   }
@@ -102,7 +102,7 @@ function generatePassword() {
   }
 
   // Start of 5th prompt. Has special characters.  Also just another Yes/No. 
-  hasSpecial = confirm("Do you want your password to have special characters? ex. %*! \n OK for Yes. Cancel for No"); //Added line break in prompt
+  var hasSpecial = confirm("Do you want your password to have special characters? ex. %*! \n OK for Yes. Cancel for No"); //Added line break in prompt
   if (hasSpecial) {
     alert("Your password WILL contain special characters.");
   }
