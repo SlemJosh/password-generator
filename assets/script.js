@@ -49,7 +49,7 @@ var numeric = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 var specialChar = ['`', '~', '!', '@', '#', '$', '%', '^', '&', '*', '_', '-', '/', '?', ','];
 
 // Once we got done with the prompts, we needed a variable to store all the above variables into one long string, so that at the end we can just get a random sampling from it.
-
+// Moved it into the function, not sure if that helps
 
 
 function generatePassword() {
