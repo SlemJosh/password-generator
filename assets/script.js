@@ -56,7 +56,7 @@ function generatePassword() {
 
   // This is our first prompt to the user.  We want them to establish the length of the password.
   // We create a new variable here, that didn't need to be defined, as it will instead just have parameters for which the user will chose.  We establish those paramets with our first if and else statements.
-  numberOfCharacters = prompt("How many characters would you like in your password? Choose between 8-128 characters and type it as a number. ex. 123");
+  numberOfcharacters = prompt("How many characters would you like in your password? Choose between 8-128 characters and type it as a number. ex. 123");
 
   // If there choice does not fall into the number paramater we outlined, we want to first give them a prompt to try again. If they fail the prompt, then we will display a message, and have them start the process over.
   if (numberOfcharacters < 8 || numberOfcharacters > 128) {
