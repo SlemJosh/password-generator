@@ -59,8 +59,8 @@ function generatePassword() {
   numberOfCharacters = prompt("How many characters would you like in your password? Choose between 8-128 characters and type it as a number. ex. 123");
 
   // If there choice does not fall into the number paramater we outlined, we want to first give them a prompt to try again. If they fail the prompt, then we will display a message, and have them start the process over.
-  if (numberOfCharacters < 8 || numberOfCharacters > 128) {
-    numberOfCharacters = prompt("Please enter a number between 8 and 128.");
+  if (numberOfcharacters < 8 || numberOfcharacters > 128) {
+    numberOfcharacters = prompt("Please enter a number between 8 and 128.");
     generatePassword();  // This essentially starts the program over, without them needing to click the button again.
   }
   // If there choice is not typed out the way we need it, we will give them a prompt asking one more time.  If they fail that prompt it will then display the error message, and ask them to start over.
@@ -70,11 +70,11 @@ function generatePassword() {
   }
   // Now if they have entered a valid number in numerical form, we want to return something to them so they know they did it correctly.
   else {
-    alert("Your password will be " + numberOfCharacters + " characters long.");
+    alert("Your password will be " + numberOfcharacters + " characters long.");
   }
 
   // Starting our 2nd prompt.  This will be the lowercase prompt.  Unlike the first, we just need a yes/no answer.
-  var hasLowercase = confirm("Do you want your password to have lowercase characters? ex. abc \n OK for Yes. Cancel for No"); //So, I did some research on making custom prompt boxes. Feels like something we will cover later on in this class
+hasLowercase = confirm("Do you want your password to have lowercase characters? ex. abc \n OK for Yes. Cancel for No"); //So, I did some research on making custom prompt boxes. Feels like something we will cover later on in this class
   if (hasLowercase) {   // Basically we are saying if the value is True, aka the user selected Yes/OK, then we want to proceed this way.
     alert("Your password WILL contain lowercase characters.");
   }
@@ -84,7 +84,7 @@ function generatePassword() {
 
 
   // Starting our 3rd prompt.  This will be the uppercase prompt.  Just need a yes/no answer.
-  var hasUppercase = confirm("Do you want your password to have uppercase characters? ex. ABC \n OK for Yes. Cancel for No.");//Added line break in prompt
+ hasUppercase = confirm("Do you want your password to have uppercase characters? ex. ABC \n OK for Yes. Cancel for No.");//Added line break in prompt
   if (hasUppercase) {
     alert("Your password WILL contain uppercase characters.");
   }
@@ -93,7 +93,7 @@ function generatePassword() {
   }
 
   // Start of 4th prompt. Has numbers.  Just need a yes/no answer.
-  var hasNumbers = confirm("Do you want your password to have numbers? ex.123 \n OK for Yes. Cancel for No");//Added line break in prompt
+  hasNumbers = confirm("Do you want your password to have numbers? ex.123 \n OK for Yes. Cancel for No");//Added line break in prompt
   if (hasNumbers) {
     alert("Your password WILL contain numbers.");
   }
@@ -102,7 +102,7 @@ function generatePassword() {
   }
 
   // Start of 5th prompt. Has special characters.  Also just another Yes/No. 
-  var hasSpecial = confirm("Do you want your password to have special characters? ex. %*! \n OK for Yes. Cancel for No"); //Added line break in prompt
+  hasSpecial = confirm("Do you want your password to have special characters? ex. %*! \n OK for Yes. Cancel for No"); //Added line break in prompt
   if (hasSpecial) {
     alert("Your password WILL contain special characters.");
   }
@@ -149,7 +149,7 @@ function generatePassword() {
   // Now we take all the above information and plug it into one last equation 
 
   let newPassword = ""                // Because we don't know if it will be just numbers or letters, we equate the password to a string.
-  for (let i = 0; i < numberOfCharacters; i++) {    // How many characters did the user want.  We get that amount and set it = to the new variable result.   
+  for (let i = 0; i < numberOfcharacters; i++) {    // How many characters did the user want.  We get that amount and set it = to the new variable result.   
     let result = [Math.floor(Math.random() * possibleCharacters.length)];  // Our result variable, which is a number of characters, we set it = to a random math operation of taking all our possible characters, and shuffling them.
     newPassword += possibleCharacters[result];  // Found the += https://www.w3schools.com/js/js_operators.asp.  Essentially making it so I didn't have to write password = password + possibleCharacters[rng].  
   }
