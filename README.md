@@ -14,7 +14,8 @@ There are some places where I can see that I will likely want to come back to th
 Deployed at https://slemjosh.github.io/password-generator/
 
 ## Usage
-![portfolio webpage.](./assets/images/passwordgenerator1.png)(./assets/images/passwordgenerator2.png)
+![password generator webpage.](./assets/images/passwordgenerator1.png)
+![password generator webpage.](./assets/images/passwordgenerator2.png)
 
 ## Credits
 
@@ -22,7 +23,7 @@ https://www.slingacademy.com/article/ways-to-generate-random-strings-in-javascri
 -This page helped me figure out to get a random string based on the information that I had acquired from the user.
 
 https://www.w3schools.com/js/js_operators.asp
--When it came to some of the math, I used this to simply, as I didn't like having code repeating itself.
+-This page gave me ideas so I didn't have to have code repeating.
 
 
 ## License
