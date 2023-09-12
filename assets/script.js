@@ -64,8 +64,8 @@ function generatePassword() {
     generatePassword();  // This essentially starts the program over, without them needing to click the button again.
   }
   // If there choice is not typed out the way we need it, we will give them a prompt asking one more time.  If they fail that prompt it will then display the error message, and ask them to start over.
-  else if (isNaN(numberOfCharacters)) { //isNaN lets us check to see if what they input was in number form.  I found on https://www.w3schools.com/jsref/jsref_isnan_number.asp .
-    numberOfCharacters = prompt("Please enter in numerical value ex. 123.");
+  else if (isNaN(numberOfcharacters)) { //isNaN lets us check to see if what they input was in number form.  I found on https://www.w3schools.com/jsref/jsref_isnan_number.asp .
+    numberOfcharacters = prompt("Please enter in numerical value ex. 123.");
     generatePassword();  // This essentially starts the program over, without them needing to click the button again.
   }
   // Now if they have entered a valid number in numerical form, we want to return something to them so they know they did it correctly.
