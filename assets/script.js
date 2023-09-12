@@ -50,9 +50,11 @@ var specialChar = ['`', '~', '!', '@', '#', '$', '%', '^', '&', '*', '_', '-', '
 
 // Once we got done with the prompts, we needed a variable to store all the above variables into one long string, so that at the end we can just get a random sampling from it.
 
-var possibleCharacters = [];
+
 
 function generatePassword() {
+
+  var possibleCharacters = [];
 
   // This is our first prompt to the user.  We want them to establish the length of the password.
   // We create a new variable here, that didn't need to be defined, as it will instead just have parameters for which the user will chose.  We establish those paramets with our first if and else statements.
@@ -74,7 +76,7 @@ function generatePassword() {
   }
 
   // Starting our 2nd prompt.  This will be the lowercase prompt.  Unlike the first, we just need a yes/no answer.
-hasLowercase = confirm("Do you want your password to have lowercase characters? ex. abc \n OK for Yes. Cancel for No"); //So, I did some research on making custom prompt boxes. Feels like something we will cover later on in this class
+  hasLowercase = confirm("Do you want your password to have lowercase characters? ex. abc \n OK for Yes. Cancel for No"); //So, I did some research on making custom prompt boxes. Feels like something we will cover later on in this class
   if (hasLowercase) {   // Basically we are saying if the value is True, aka the user selected Yes/OK, then we want to proceed this way.
     alert("Your password WILL contain lowercase characters.");
   }
@@ -84,7 +86,7 @@ hasLowercase = confirm("Do you want your password to have lowercase characters? 
 
 
   // Starting our 3rd prompt.  This will be the uppercase prompt.  Just need a yes/no answer.
- hasUppercase = confirm("Do you want your password to have uppercase characters? ex. ABC \n OK for Yes. Cancel for No.");//Added line break in prompt
+  hasUppercase = confirm("Do you want your password to have uppercase characters? ex. ABC \n OK for Yes. Cancel for No.");//Added line break in prompt
   if (hasUppercase) {
     alert("Your password WILL contain uppercase characters.");
   }
@@ -144,7 +146,7 @@ hasLowercase = confirm("Do you want your password to have lowercase characters? 
   if (hasSpecial) {
     possibleCharacters = possibleCharacters.concat(specialChar);
   }
-  // console.log(possibleCharacters) // A test to make sure that our variable contains the included array.
+  console.log(possibleCharacters) // A test to make sure that our variable contains the included array.
 
   // Now we take all the above information and plug it into one last equation 
 
