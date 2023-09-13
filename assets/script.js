@@ -13,22 +13,6 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-
-// First Step for this refactor is to write out some pseudocode so I can have steps to follow in order to complete the page.
-// These are mostly taken directly from the Challenge page
-// Basic Outline.  Each step will actually have varying steps underneath them.  As we provide options, we need to build our app to know what those choices are, and also have a way of using them.  
-// Step 1 - User will click the button
-// So as we start, and click the button, nothing happens.  The code that was given to us is for the button to start the prompts, but we have no prompts.
-// Step 2 - A series of Prompts will appear to the user.
-// 
-// Step 3 - First prompt asks how many characters they'd like the password to be.  At least 8 and no more than 128 characters are their limits.
-// 
-// Step 4 - Second prompt asks if they would like lowercase letters included. This is a yes or no answer.  
-// Step 5 - Third prompt asks if they would like uppercase letters included.  This is is yes or no answer.
-// Step 6 - Fourth prompt asks if they would like any numbers included. This is a yes or no answer.
-// Step 7 - Fifth prompt asks if they would like special characters in their password. This is a yes or no question.
-// Step 8 - Once all prompts have been answered a password should be generated based upon their answers.  This can be either displayed in the box on the page, or given in a prompt.  On the box probably better, so they can copy it.
-
 // Start of our coding.
 // I decided to start with declaring variables.  I'm going to ask the user to use them, figured I might as well declare them first and foremost.
 
@@ -53,6 +37,10 @@ var specialChar = ['`', '~', '!', '@', '#', '$', '%', '^', '&', '*', '_', '-', '
 
 
 function generatePassword() {
+  var hasLowercase;
+  var hasUppercase;
+  var hasNumbers;
+  var hasSpecial;
 
   var possibleCharacters = [];
 
@@ -63,12 +51,12 @@ function generatePassword() {
   // If there choice does not fall into the number paramater we outlined, we want to first give them a prompt to try again. If they fail the prompt, then we will display a message, and have them start the process over.
   if (numberOfcharacters < 8 || numberOfcharacters > 128) {
     numberOfcharacters = prompt("Please enter a number between 8 and 128.");
-    generatePassword();  // This essentially starts the program over, without them needing to click the button again.
+    return("Your password must contain at least 8 and no more than 128 characters. \n Please try again.");  
   }
   // If there choice is not typed out the way we need it, we will give them a prompt asking one more time.  If they fail that prompt it will then display the error message, and ask them to start over.
   else if (isNaN(numberOfcharacters)) { //isNaN lets us check to see if what they input was in number form.  I found on https://www.w3schools.com/jsref/jsref_isnan_number.asp .
     numberOfcharacters = prompt("Please enter in numerical value ex. 123.");
-    generatePassword();  // This essentially starts the program over, without them needing to click the button again.
+    return("Your password must contain at least 8 and no more than 128 characters. \n Please try again.");  // This essentially starts the program over, without them needing to click the button again.
   }
   // Now if they have entered a valid number in numerical form, we want to return something to them so they know they did it correctly.
   else {
@@ -152,7 +140,7 @@ function generatePassword() {
 
   let newPassword = ""                // Because we don't know if it will be just numbers or letters, we equate the password to a string.
   for (let i = 0; i < numberOfcharacters; i++) {    // How many characters did the user want.  We get that amount and set it = to the new variable result.   
-    let result = [Math.floor(Math.random() * possibleCharacters.length)];  // Our result variable, which is a number of characters, we set it = to a random math operation of taking all our possible characters, and shuffling them.
+    let result = Math.floor(Math.random() * possibleCharacters.length);  // Our result variable, which is a number of characters, we set it = to a random math operation of taking all our possible characters, and shuffling them.
     newPassword += possibleCharacters[result];  // Found the += https://www.w3schools.com/js/js_operators.asp.  Essentially making it so I didn't have to write password = password + possibleCharacters[rng].  
   }
   return newPassword;    //Return sends a message to the box.  We could also send the user a prompt, but if it's in the box, they can copy and paste it.
